@@ -96,3 +96,19 @@ while (parentElement.firstElementChild) {
 
 // 3.3 (Alternative): ...remove the last child element of the unordered list.
 //    Hint: DOM elements have a method to remove their last child.
+const logEvent = (event)=>{
+    console.log("Event triggered:", event);    
+}
+
+ function logEvent2(event){
+    console.log("Event2 triggered", event);
+    event.target.style.color="red"
+    mainHeader.style.color="red"
+}
+document.addEventListener("DOMContentLoaded", logEvent);
+
+logEvent("Directly loading without waiting for content")
+
+const mainHeader=document.getElementById("main-header")
+
+mainHeader.addEventListener("click",logEvent2);
